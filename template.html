@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Random Example Schedule
+{% endblock %}
+
+{% block main %}
+<h3>  Random Example Schedule</h3>
+   <table style="width:100%">
+   <thead>
+            <tr>
+                <th>Name</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for employee in employees %}
+            <tr>
+                <td>{{ employee.first_name }}</td>
+
+            </tr>
+            {% endfor %}
+        <td colspan="4">CASH</td>
+        <td>{{ current_cash }}</td>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td style="font-weight: bold;">{{ grand_total }}</td>
+            </tr>
+        </tfoot>
+</table>
+{% endblock %}
